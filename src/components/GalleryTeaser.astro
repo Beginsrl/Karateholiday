@@ -1,0 +1,49 @@
+---
+---
+<section id="gallery" class="section">
+    <div class="container text-center">
+        <h2 class="section-title">Gallery</h2>
+        <p class="section-subtitle">I momenti più belli delle scorse edizioni</p>
+        
+        <div class="gallery-preview">
+            <div class="preview-item"></div>
+            <div class="preview-item"></div>
+            <div class="preview-item"></div>
+            <div class="preview-item"></div>
+        </div>
+        
+        <div class="mt-large">
+            <a href="/gallery" class="btn btn-primary">Guarda tutte le foto</a>
+        </div>
+    </div>
+</section>
+
+<style>
+.gallery-preview {
+    display: flex;
+    gap: 10px;
+    height: 300px;
+    margin-top: var(--spacing-lg);
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.preview-item {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    transition: flex 0.5s ease;
+    cursor: pointer;
+}
+
+.preview-item:nth-child(1) { background-image: url('https://placehold.co/600x800?text=Foto+1'); }
+.preview-item:nth-child(2) { background-image: url('https://placehold.co/600x800?text=Foto+2'); }
+.preview-item:nth-child(3) { background-image: url('https://placehold.co/600x800?text=Foto+3'); }
+.preview-item:nth-child(4) { background-image: url('https://placehold.co/600x800?text=Foto+4'); }
+
+.preview-item:hover {
+    flex: 3;
+}
+
+.mt-large { margin-top: var(--spacing-xl); }
+</style>

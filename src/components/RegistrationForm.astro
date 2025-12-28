@@ -1,0 +1,359 @@
+---
+---
+<div class="registration-form-container">
+    <form class="registration-form" action="#" method="POST" enctype="multipart/form-data">
+        
+        <!-- Step 1: Scelta Soggiorno -->
+        <div class="form-section">
+            <h3 class="form-section-title">1. Scelta Soggiorno</h3>
+            <p class="form-note">L'ingresso giornaliero va pagato in loco all'arrivo.</p>
+            
+            <div class="form-group checkbox-group">
+                <label class="checkbox-container">
+                    <input type="checkbox" name="soggiorno" value="settimanale">
+                    <span class="checkmark"></span>
+                    SOGGIORNO SETTIMANALE
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" name="soggiorno" value="giornaliero_con_pranzo">
+                    <span class="checkmark"></span>
+                    INGRESSO GIORNALIERO SABATO 5 LUGLIO CON PRANZO
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" name="soggiorno" value="giornaliero_senza_pranzo">
+                    <span class="checkmark"></span>
+                    INGRESSO GIORNALIERO SABATO 5 LUGLIO SENZA PRANZO
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <label for="ricevuta">Allegare Ricevuta Pagamento (No ingressi giornalieri)</label>
+                <input type="file" id="ricevuta" name="ricevuta" accept=".pdf,.jpg,.jpeg,.png">
+            </div>
+        </div>
+
+        <!-- Step 2: Dati Partecipante -->
+        <div class="form-section">
+            <h3 class="form-section-title">2. Dati Partecipante</h3>
+            
+            <div class="form-group">
+                <label>Tipologia *</label>
+                <div class="radio-group-row">
+                    <label class="radio-container">
+                        <input type="radio" name="tipologia" value="accompagnatore" required>
+                        <span class="radio-mark"></span>
+                        Accompagnatore
+                    </label>
+                    <label class="radio-container">
+                        <input type="radio" name="tipologia" value="allievo" required>
+                        <span class="radio-mark"></span>
+                        Allievo
+                    </label>
+                    <label class="radio-container">
+                        <input type="radio" name="tipologia" value="tecnico" required>
+                        <span class="radio-mark"></span>
+                        Tecnico
+                    </label>
+                </div>
+            </div>
+
+            <div class="row-2">
+                <div class="form-group">
+                    <label for="cognome">Cognome *</label>
+                    <input type="text" id="cognome" name="cognome" required>
+                </div>
+                <div class="form-group">
+                    <label for="nome">Nome *</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+            </div>
+
+            <div class="row-2">
+                <div class="form-group">
+                    <label for="cf">Codice Fiscale *</label>
+                    <input type="text" id="cf" name="cf" required>
+                </div>
+                <div class="form-group">
+                    <label for="data_nascita">Data di Nascita *</label>
+                    <input type="date" id="data_nascita" name="data_nascita" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="luogo_nascita">Luogo di Nascita *</label>
+                <input type="text" id="luogo_nascita" name="luogo_nascita" required>
+            </div>
+
+            <div class="form-group">
+                <label for="indirizzo">Indirizzo di Residenza *</label>
+                <input type="text" id="indirizzo" name="indirizzo" required>
+            </div>
+        </div>
+
+        <!-- Step 3: Dati Tecnici -->
+        <div class="form-section">
+            <h3 class="form-section-title">3. Dati Tecnici & Note</h3>
+            
+            <div class="form-group">
+                <label>Specialità della Disciplina *</label>
+                <div class="checkbox-group-grid">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="specialita" value="kata">
+                        <span class="checkmark"></span>
+                        Kata
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="specialita" value="kumite">
+                        <span class="checkmark"></span>
+                        Kumite
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="specialita" value="tradizionale">
+                        <span class="checkmark"></span>
+                        Karate Tradizionale
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="specialita" value="accompagnatore">
+                        <span class="checkmark"></span>
+                        Accompagnatore
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="allergie">Allergie Alimentari e Farmaci * (Se nessuna, scrivere "Nessuna")</label>
+                <textarea id="allergie" name="allergie" rows="2" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="peso_altezza">Peso e Altezza (Solo Stagisti) - Altrimenti "Accompagnatore" *</label>
+                <input type="text" id="peso_altezza" name="peso_altezza" required>
+            </div>
+
+            <div class="form-group">
+                <label for="associazione">Associazione Sportiva e Nome Tecnico *</label>
+                <textarea id="associazione" name="associazione" rows="2" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="compagni_stanza">Vorrei dormire con (Cognomi):</label>
+                <textarea id="compagni_stanza" name="compagni_stanza" rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Porto un animale domestico? *</label>
+                <div class="radio-group-row">
+                     <label class="radio-container">
+                        <input type="radio" name="animale" value="si" required>
+                        <span class="radio-mark"></span>
+                        Sì
+                    </label>
+                    <label class="radio-container">
+                        <input type="radio" name="animale" value="no" required>
+                        <span class="radio-mark"></span>
+                        No
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Regolamento -->
+        <div class="form-section bg-light">
+            <h3 class="form-section-title">4. Regolamento e Privacy</h3>
+            <div class="privacy-box">
+                <ul>
+                    <li>1. Presa visione del regolamento e scadenze pagamenti.</li>
+                    <li>2. Possesso certificato medico idoneo.</li>
+                    <li>3. Autorizzazione tesseramento ASD.</li>
+                    <li>4. Presa visione informativa Privacy.</li>
+                    <li>5. Consenso dati sanitari.</li>
+                    <li>6. Consenso foto/video.</li>
+                    <li>7. Info quote.</li>
+                    <li>8. Info extra.</li>
+                    <li>9. Politica rimborsi.</li>
+                    <li>10. Ricevuta allegata.</li>
+                </ul>
+            </div>
+            
+            <div class="form-group mt-md">
+                <label>Accettazione *</label>
+                <label class="checkbox-container">
+                    <input type="checkbox" name="privacy" value="full" required>
+                    <span class="checkmark"></span>
+                    Accetto integralmente il regolamento (Punti 1-10)
+                </label>
+                 <label class="checkbox-container">
+                    <input type="checkbox" name="privacy" value="daily">
+                    <span class="checkmark"></span>
+                    Accetto regolamento giornaliero (Punti 1-6)
+                </label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-large mt-md">INVIA ISCRIZIONE</button>
+    </form>
+</div>
+
+<style>
+.registration-form-container {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--color-blue);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-section {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid #eee;
+}
+
+.form-section:last-child {
+    border-bottom: none;
+}
+
+.form-section-title {
+    color: var(--color-blue);
+    border-left: 4px solid var(--color-orange);
+    padding-left: 10px;
+    margin-bottom: var(--spacing-md);
+}
+
+.form-note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: var(--spacing-md);
+    font-style: italic;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-text);
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="file"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--color-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Custom Checkbox/Radio */
+.checkbox-container, .radio-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: 400 !important;
+}
+
+.checkbox-container input, .radio-container input {
+    display: none;
+}
+
+.checkmark, .radio-mark {
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.radio-mark { border-radius: 50%; }
+
+.checkbox-container:hover .checkmark, .radio-container:hover .radio-mark {
+    background-color: #ccc;
+}
+
+.checkbox-container input:checked + .checkmark, .radio-container input:checked + .radio-mark {
+    background-color: var(--color-blue);
+}
+
+.checkmark:after, .radio-mark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked + .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    display: block;
+}
+
+.radio-container input:checked + .radio-mark:after {
+    top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+    display: block;
+}
+
+.radio-group-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.checkbox-group-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.bg-light {
+    background-color: #f9fafb;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.privacy-box ul {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.mt-md { margin-top: var(--spacing-md); }
+
+@media (max-width: 600px) {
+    .row-2 { grid-template-columns: 1fr; }
+    .checkbox-group-grid { grid-template-columns: 1fr; }
+}
+</style>

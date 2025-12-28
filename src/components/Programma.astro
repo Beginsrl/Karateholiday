@@ -1,0 +1,124 @@
+---
+---
+<section id="programma" class="section alt-bg">
+    <div class="container">
+        <h2 class="section-title text-center">Il Programma</h2>
+        <div class="program-timeline">
+            <div class="timeline-item">
+                <div class="timeline-time">Mattina</div>
+                <div class="timeline-content">
+                    <h3>Risveglio Muscolare & Tecnica</h3>
+                    <p>Attività in spiaggia e sessioni tecniche specifiche per kata e kumite.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">Pomeriggio</div>
+                <div class="timeline-content">
+                    <h3>Relax & Mare</h3>
+                    <p>Tempo libero per godersi il villaggio, la piscina e le attività ricreative.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">Sera</div>
+                <div class="timeline-content">
+                    <h3>Allenamento & Party</h3>
+                    <p>Seconda sessione tecnica seguita da serate a tema e animazione.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.alt-bg {
+    background-color: #eff6ff;
+}
+
+.program-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: var(--spacing-lg) 0;
+}
+
+.program-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-blue);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+}
+
+.timeline-time {
+    width: 45%;
+    text-align: right;
+    font-weight: bold;
+    color: var(--color-orange);
+    font-size: 1.2rem;
+    padding-right: var(--spacing-lg);
+}
+
+.timeline-content {
+    width: 45%;
+    padding-left: var(--spacing-lg);
+    text-align: left;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(even) .timeline-time {
+    text-align: left;
+    padding-left: var(--spacing-lg);
+    padding-right: 0;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    text-align: right;
+    padding-right: var(--spacing-lg);
+    padding-left: 0;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background: var(--color-yellow);
+    border: 3px solid var(--color-orange);
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .program-timeline::before { left: 20px; }
+    .timeline-item, .timeline-item:nth-child(even) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 50px;
+    }
+    .timeline-time, .timeline-content, 
+    .timeline-item:nth-child(even) .timeline-time, 
+    .timeline-item:nth-child(even) .timeline-content {
+        width: 100%;
+        text-align: left;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .timeline-item::after { left: 20px; }
+}
+</style>

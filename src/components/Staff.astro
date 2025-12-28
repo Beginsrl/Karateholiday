@@ -1,0 +1,49 @@
+---
+---
+<section id="staff" class="section">
+    <div class="container">
+         <h2 class="section-title text-center">Staff Nazionale</h2>
+         <p class="text-center mb-large">Allenati con i migliori tecnici e atleti del panorama italiano.</p>
+         <div class="grid-staff">
+             <div class="staff-card">
+                 <div class="staff-img" style="background-image: url('https://placehold.co/300x300?text=Tecnico+1');"></div>
+                 <h3>Master Name</h3>
+                 <p>Direttore Tecnico</p>
+             </div>
+             <div class="staff-card">
+                 <div class="staff-img" style="background-image: url('https://placehold.co/300x300?text=Atleta+1');"></div>
+                 <h3>Champion Name</h3>
+                 <p>Campione Europeo</p>
+             </div>
+             <div class="staff-card">
+                 <div class="staff-img" style="background-image: url('https://placehold.co/300x300?text=Atleta+2');"></div>
+                 <h3>Champion Name</h3>
+                 <p>Campione Mondiale</p>
+             </div>
+         </div>
+    </div>
+</section>
+
+<style>
+.grid-staff {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.staff-card {
+    text-align: center;
+}
+
+.staff-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto var(--spacing-md);
+    border: 5px solid var(--color-bg-light);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+</style>

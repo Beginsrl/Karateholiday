@@ -1,0 +1,78 @@
+---
+import RegistrationForm from './RegistrationForm.astro';
+---
+<section id="contatti" class="section">
+     <div class="container contact-container">
+         <div class="contact-text">
+             <h2>Iscrizione & Contatti</h2>
+             <p>Compila il modulo qui a fianco per iscriverti ufficialmente a Karate Holiday 2026.</p>
+             <p class="mb-md">Per qualsiasi dubbio prima dell'iscrizione, contattaci ai recapiti qui sotto.</p>
+             
+             <ul class="contact-list">
+                 <li>📧 info@karateholiday.it</li>
+                 <li>📞 +39 123 456 7890</li>
+                 <li>📍 Villaggio Costa D'Argento, San Vito Chietino</li>
+             </ul>
+         </div>
+         <div class="contact-form-wrapper" id="prenota">
+             <RegistrationForm />
+         </div>
+     </div>
+</section>
+
+<style>
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
+    align-items: flex-start;
+}
+
+.contact-text {
+    flex: 1;
+    min-width: 300px;
+    z-index: 10; /* Ensure text is above if needed, but sticky is removed for mobile */
+}
+
+@media (min-width: 1024px) {
+    .contact-text {
+        position: sticky;
+        top: 200px; /* Adjusted for taller header */
+    }
+}
+
+.contact-list li {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-form-wrapper {
+    flex: 2; /* Give more space to form */
+    min-width: 300px;
+    background: transparent; /* Component handles its own bg */
+    box-shadow: none;
+    padding: 0;
+    border-top: none;
+}
+
+.contact-form h3 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-blue);
+}
+
+.google-form-card {
+    padding: var(--spacing-md);
+}
+
+.mb-md { margin-bottom: var(--spacing-md); }
+.mt-sm { margin-top: var(--spacing-sm); }
+.small-text { font-size: 0.85rem; color: #666; }
+
+.pulse-on-hover:hover {
+    animation: pulse 1s infinite;
+}
+
+.btn-full {
+    width: 100%;
+}
+</style>

@@ -1,0 +1,192 @@
+---
+---
+<section id="info" class="section bg-light pattern-palm">
+    <div class="container">
+        <h2 class="section-title text-center">Info & Prezzi</h2>
+        <div class="promo-banner text-center">
+            <h3>Blocca il tuo posto con una CAPARRA DI SOLI <span class="highlight">150€</span> A PERSONA</h3>
+            <p>Saldo direttamente in struttura al tuo arrivo.</p>
+        </div>
+
+        <div class="packages-grid">
+            <!-- Main Package -->
+            <div class="package-card featured">
+                <div class="package-header">
+                    <h3>Pacchetto 7 Giorni</h3>
+                    <div class="price">€500</div>
+                    <div class="dates">Dal 6 al 12 Luglio 2026</div>
+                </div>
+                <div class="package-body">
+                    <ul>
+                        <li><strong>Check-in:</strong> Dalla cena di Lunedì 6 Luglio</li>
+                        <li><strong>Check-out:</strong> Al pranzo di Domenica 12 Luglio</li>
+                        <li><em>(Esempio date, da confermare)</em></li>
+                    </ul>
+                    <a href="#prenota" class="btn btn-secondary mt-md">PRENOTA ORA</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="details-section">
+            <div class="details-col">
+                <h4>La tariffa comprende:</h4>
+                <ul class="check-list">
+                    <li>Soggiorno presso il Villaggio Costa D'Argento</li>
+                    <li>Pensione completa (colazione, pranzo, cena) con acqua inclusa</li>
+                    <li>Accesso libero a tutte le lezioni di Karate e preparazione atletica</li>
+                    <li>Kit di Benvenuto "Karate Holiday 2026"</li>
+                    <li>Assistenza con personale specializzato</li>
+                    <li>Animazione serale e Party a tema</li>
+                    <li>Utilizzo piscina e servizio spiaggia</li>
+                    <li>Tassa di Soggiorno esclusa (da pagare in loco)</li>
+                </ul>
+            </div>
+            
+            <div class="details-col">
+                <h4>Riduzioni & Supplementi:</h4>
+                <ul class="info-list">
+                    <li><strong>Bambini 0-4 anni:</strong> GRATIS (in culla propria/letto genitori)</li>
+                    <li><strong>Ragazzi 4-14 anni:</strong> Sconto 50% (in 3°/4° letto)</li>
+                    <li><strong>Supplemento Singola:</strong> +20€ a notte</li>
+                    <li><strong>Animali:</strong> Ammessi con supplemento pulizia</li>
+                </ul>
+
+                <h4 class="mt-lg">Politica di Cancellazione</h4>
+                <p class="small-text">
+                    Cancellazione gratuita con rimborso immediato della caparra entro il 30 Maggio 2026.<br>
+                    Dopo tale data, la caparra non sarà restituita.
+                </p>
+                
+                <h4 class="mt-md">Formula "Roulette"</h4>
+                <p class="small-text">
+                    Sei da solo? Ti troviamo noi il compagno di stanza dello stesso sesso per evitare il supplemento singola!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.bg-light { background-color: #f8fafc; }
+.pattern-palm { 
+    background-image: radial-gradient(#0EA5E9 0.5px, transparent 0.5px);
+    background-size: 30px 30px;
+}
+
+.promo-banner {
+    background: var(--color-orange);
+    color: white;
+    padding: var(--spacing-md);
+    border-radius: 10px;
+    margin-bottom: var(--spacing-xl);
+    box-shadow: 0 4px 15px rgba(251, 146, 60, 0.4);
+}
+
+.promo-banner .highlight {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--color-yellow);
+}
+
+.packages-grid {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.package-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+    border: 2px solid var(--color-blue);
+}
+
+.package-header {
+    background: var(--color-blue);
+    color: white;
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+.package-header .price {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.package-body {
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+.package-body ul {
+    list-style: none;
+    margin-bottom: var(--spacing-md);
+}
+
+.details-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+h4 {
+    color: var(--color-blue);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--color-yellow);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.check-list li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.check-list li::before {
+    content: '✅';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 0.9em;
+}
+
+.info-list li {
+    margin-bottom: 10px;
+    padding-left: 15px;
+    border-left: 3px solid var(--color-orange);
+}
+
+.small-text {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.mt-lg { margin-top: var(--spacing-lg); }
+.mt-md { margin-top: var(--spacing-md); }
+
+/* Button override */
+.btn-secondary {
+    background-color: var(--color-orange);
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #e87b20;
+}
+
+@media (max-width: 768px) {
+    .details-section {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
