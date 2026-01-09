@@ -1,7 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import galleryData from "../data/gallery.json";
 ---
 
 <Layout title="Galleria Foto - Karate Holiday">
@@ -16,60 +17,203 @@ import Footer from '../components/Footer.astro';
 
     <div class="container">
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="https://placehold.co/400x400?text=Foto+1" alt="Foto"></div>
-            <div class="gallery-item"><img src="https://placehold.co/400x400?text=Foto+2" alt="Foto"></div>
-            <div class="gallery-item"><img src="https://placehold.co/400x400?text=Foto+3" alt="Foto"></div>
-            <div class="gallery-item"><img src="https://placehold.co/400x400?text=Foto+4" alt="Foto"></div>
-            <div class="gallery-item"><img src="https://placehold.co/400x400?text=Foto+5" alt="Foto"></div>
-            <div class="gallery-item"><img src="https://placehold.co/400x400?text=Foto+6" alt="Foto"></div>
+            {
+                galleryData.map((item) => (
+                    <div
+                        class="gallery-item"
+                        data-src={item.src}
+                        data-alt={item.alt}
+                        data-title={item.title}
+                    >
+                        <img
+                            src={item.src}
+                            alt={item.alt}
+                            title={item.title}
+                            loading="lazy"
+                        />
+                    </div>
+                ))
+            }
         </div>
-        
+
         <div class="text-center mb-large">
             <a href="/" class="btn btn-secondary">Torna alla Home</a>
         </div>
     </div>
 
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" />
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById(
+                "lightbox-img",
+            ) as HTMLImageElement;
+            const captionText = document.getElementById("caption");
+            const span = document.querySelector(".close") as HTMLElement;
+            const galleryItems = document.querySelectorAll(".gallery-item");
+
+            if (!lightbox || !lightboxImg || !captionText || !span) return;
+
+            const openLightbox = (src: string, title: string, alt: string) => {
+                lightbox.style.display = "block";
+                setTimeout(() => lightbox.classList.add("show"), 10);
+                lightboxImg.src = src;
+                captionText.innerHTML = title || alt || "";
+            };
+
+            const closeLightbox = () => {
+                lightbox.classList.remove("show");
+                setTimeout(() => {
+                    lightbox.style.display = "none";
+                    lightboxImg.src = ""; // Clear src
+                }, 300);
+            };
+
+            galleryItems.forEach((item) => {
+                item.addEventListener("click", function (this: HTMLElement) {
+                    const src = this.getAttribute("data-src") || "";
+                    const title = this.getAttribute("data-title") || "";
+                    const alt = this.getAttribute("data-alt") || "";
+                    openLightbox(src, title, alt);
+                });
+            });
+
+            span.addEventListener("click", closeLightbox);
+
+            lightbox.addEventListener("click", (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && lightbox.style.display === "block") {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+
     <Footer />
 </Layout>
 
 <style>
-/* Space for fixed header */
-.gallery-page-header {
-    padding-top: 120px; /* Header height + spacing */
-    padding-bottom: 50px;
-    background: var(--color-blue);
-    color: white;
-    text-align: center;
-}
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 50px 0;
-}
-.gallery-item {
-    height: 250px;
-    background-color: #ddd;
-    overflow: hidden;
-    border-radius: 10px;
-    position: relative;
-}
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s;
-}
-.gallery-item:hover img {
-    transform: scale(1.1);
-}
+    /* Space for fixed header */
+    .gallery-page-header {
+        padding-top: 120px; /* Header height + spacing */
+        padding-bottom: 50px;
+        background: var(--color-blue);
+        color: white;
+        text-align: center;
+    }
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 50px 0;
+    }
+    .gallery-item {
+        height: 250px;
+        background-color: #ddd;
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+        cursor: pointer;
+    }
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
+    .gallery-item:hover img {
+        transform: scale(1.1);
+    }
 
-.btn-secondary {
-    background-color: var(--color-text);
-    color: white;
-}
-.btn-secondary:hover {
-    background-color: #555;
-    transform: translateY(-2px);
-}
+    .btn-secondary {
+        background-color: var(--color-text);
+        color: white;
+    }
+    .btn-secondary:hover {
+        background-color: #555;
+        transform: translateY(-2px);
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .lightbox.show {
+        opacity: 1;
+    }
+
+    .lightbox-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 1000px;
+        max-height: 80vh;
+        object-fit: contain;
+        transform: scale(0.8);
+        transition: transform 0.3s ease;
+    }
+
+    .lightbox.show .lightbox-content {
+        transform: scale(1);
+    }
+
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+        font-size: 1.2rem;
+    }
+
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 60px;
+        font-weight: bold;
+        transition: 0.3s;
+        line-height: 1;
+        user-select: none;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: 700px) {
+        .lightbox-content {
+            width: 100%;
+        }
+    }
 </style>
