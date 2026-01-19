@@ -105,6 +105,7 @@ $results = $db->query("SELECT * FROM registrations ORDER BY data_registrazione D
                 <th>Cognome</th>
                 <th>Email</th>
                 <th>Tipologia</th>
+                <th>Atleta Accompagnato</th>
                 <th>Soggiorno</th>
                 <th>Ricevuta</th>
                 <th>Dettagli</th>
@@ -130,6 +131,9 @@ $results = $db->query("SELECT * FROM registrations ORDER BY data_registrazione D
                     </td>
                     <td>
                         <?= htmlspecialchars($row['tipologia']) ?>
+                    </td>
+                    <td>
+                        <?= htmlspecialchars($row['atleta_accompagnato'] ?? '-') ?>
                     </td>
                     <td>
                         <?= htmlspecialchars($row['soggiorno']) ?>

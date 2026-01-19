@@ -1,225 +1,274 @@
 ---
+
 ---
 
 <section id="hero" class="hero">
     <div class="hero-slider" id="heroSlider">
         <!-- Slide 1: Allenamenti -->
-        <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://placehold.co/1920x1080/0EA5E9/FFFFFF?text=Allenamenti+Nazionale');"></div>
+        <div
+            class="slide active"
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://placehold.co/1920x1080/0EA5E9/FFFFFF?text=Allenamenti+Nazionale');"
+        >
+        </div>
         <!-- Slide 2: Mare e Piscina -->
-        <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://placehold.co/1920x1080/FB923C/FFFFFF?text=Mare+e+Piscina');"></div>
+        <div
+            class="slide"
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://placehold.co/1920x1080/FB923C/FFFFFF?text=Mare+e+Piscina');"
+        >
+        </div>
         <!-- Slide 3: Momenti di Gruppo -->
-        <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://placehold.co/1920x1080/FCD34D/333333?text=Amicizia+e+Gruppo');"></div>
+        <div
+            class="slide"
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://placehold.co/1920x1080/FCD34D/333333?text=Amicizia+e+Gruppo');"
+        >
+        </div>
         <!-- Slide 4: Villaggio -->
-        <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/assets/villaggio-pool.jpg');"></div>
+        <div
+            class="slide"
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/assets/villaggio-pool.jpg');"
+        >
+        </div>
     </div>
-    
+
     <!-- Slider Controls -->
     <button class="slider-prev" id="prevSlide">&#10094;</button>
     <button class="slider-next" id="nextSlide">&#10095;</button>
-    
+
     <div class="hero-overlay">
         <div class="container hero-content">
             <h1 class="hero-title">KARATE HOLIDAY 2026</h1>
-            <p class="hero-claim">Vacanza-stage con la Nazionale Italiana di Karate</p>
-            
+            <p class="hero-claim">
+                Vacanza stage con tecnici e atleti della Nazionale Italiana
+                Fijlkam
+            </p>
+
             <div class="hero-trust">
-                <span class="trust-item"><span class="icon">🏆</span> Oltre 150 ragazzi già iscritti dal 2025</span>
-                <span class="trust-item"><span class="icon">⚠️</span> Edizione 2026 – Posti limitati!</span>
+                <span class="trust-item"
+                    ><span class="icon">🏆</span> Oltre 100 ragazzi già iscritti dal
+                    2025</span
+                >
+                <span class="trust-item"
+                    ><span class="icon">⚠️</span> Edizione 2026 – Posti limitati!</span
+                >
             </div>
-            
+
             <div class="hero-info">
-                <p class="highlight-date">6–12 Luglio • San Vito Chietino</p>
-                <p>Dai 8 anni in su • 7 giorni in pensione completa • €500 (in due rate)</p>
+                <p class="highlight-date">13–19 Luglio • San Vito Chietino</p>
+                <p>
+                    Dai 8 anni in su • 7 giorni in pensione completa • €500 (in
+                    due rate)
+                </p>
             </div>
-            
+
             <div class="hero-actions">
-                <a href="#prenota" class="btn btn-primary btn-large pulsing-btn">PRENOTA IL TUO POSTO</a>
-                <p class="hero-contact-link"><a href="#contatti">Hai domande? Contattaci subito</a></p>
+                <a href="#prenota" class="btn btn-primary btn-large pulsing-btn"
+                    >PRENOTA IL TUO POSTO</a
+                >
+                <p class="hero-contact-link">
+                    <a href="#contatti">Hai domande? Contattaci subito</a>
+                </p>
             </div>
-            
+
             <div class="hero-badges">
                 <div class="badge-img">
-                     <span style="font-weight:bold; color:#0055A4;">FIJLKAM</span>
+                    <span style="font-weight:bold; color:#0055A4;">FIJLKAM</span
+                    >
                 </div>
                 <div class="badge-img">
                     <span style="font-weight:bold; color:#E30613;">CSEN</span>
                 </div>
                 <div class="badge-img">
-                     <span style="font-weight:bold; color:black;">CONI</span>
+                    <span style="font-weight:bold; color:black;">CONI</span>
                 </div>
-                <span class="badge-text">Stage ufficiale riconosciuto<br>Con Tecnici e Atleti della Nazionale</span>
+                <span class="badge-text"
+                    >Stage ufficiale riconosciuto<br />Con Tecnici e Atleti
+                    della Nazionale</span
+                >
             </div>
         </div>
     </div>
 </section>
 
 <style>
-.hero {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--color-white);
-    margin-top: 0;
-    overflow: hidden;
-}
+    .hero {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--color-white);
+        margin-top: 0;
+        overflow: hidden;
+    }
 
-.hero-slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
+    .hero-slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
 
-.hero-overlay {
-    background: rgba(0, 0, 0, 0.4);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .hero-overlay {
+        background: rgba(0, 0, 0, 0.4);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.hero-content {
-    max-width: 800px;
-}
+    .hero-content {
+        max-width: 800px;
+    }
 
-.hero-title {
-    font-size: 3.5rem;
-    margin-bottom: var(--spacing-sm);
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    color: var(--color-yellow);
-}
+    .hero-title {
+        font-size: 3.5rem;
+        margin-bottom: var(--spacing-sm);
+        text-transform: uppercase;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        color: var(--color-yellow);
+    }
 
-.hero-claim {
-    font-size: 1.5rem;
-    margin-bottom: var(--spacing-lg);
-    font-weight: 600;
-}
+    .hero-claim {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-lg);
+        font-weight: 600;
+    }
 
-.hero-trust {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-md);
-    font-size: 1.1rem;
-    font-weight: 600;
-    flex-wrap: wrap;
-}
+    .hero-trust {
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-md);
+        font-size: 1.1rem;
+        font-weight: 600;
+        flex-wrap: wrap;
+    }
 
-.hero-info {
-    font-size: 1.2rem;
-    margin-bottom: var(--spacing-lg);
-    background: rgba(14, 165, 233, 0.8);
-    padding: var(--spacing-md);
-    border-radius: 10px;
-    display: inline-block;
-}
+    .hero-info {
+        font-size: 1.2rem;
+        margin-bottom: var(--spacing-lg);
+        background: rgba(14, 165, 233, 0.8);
+        padding: var(--spacing-md);
+        border-radius: 10px;
+        display: inline-block;
+    }
 
-.hero-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
-}
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-lg);
+    }
 
-.hero-contact-link a {
-    color: var(--color-white);
-    text-decoration: underline;
-    font-size: 0.9rem;
-}
+    .hero-contact-link a {
+        color: var(--color-white);
+        text-decoration: underline;
+        font-size: 0.9rem;
+    }
 
-.hero-badges {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
-}
+    .hero-badges {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-lg);
+    }
 
-.badge-img {
-    background-color: white; 
-    padding: 5px; 
-    border-radius: 5px;
-}
+    .badge-img {
+        background-color: white;
+        padding: 5px;
+        border-radius: 5px;
+    }
 
-.badge-text {
-    font-size: 0.9rem;
-    font-style: italic;
-    line-height: 1.2;
-    text-align: left;
-    color: white; 
-    text-shadow: 1px 1px 2px black;
-}
+    .badge-text {
+        font-size: 0.9rem;
+        font-style: italic;
+        line-height: 1.2;
+        text-align: left;
+        color: white;
+        text-shadow: 1px 1px 2px black;
+    }
 
-.slider-prev, .slider-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.2);
-    color: white;
-    border: none;
-    font-size: 2rem;
-    padding: 1rem;
-    cursor: pointer;
-    transition: background 0.3s;
-    z-index: 2;
-}
+    .slider-prev,
+    .slider-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: none;
+        font-size: 2rem;
+        padding: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+        z-index: 2;
+    }
 
-.slider-prev { left: 0; border-radius: 0 10px 10px 0; }
-.slider-next { right: 0; border-radius: 10px 0 0 10px; }
+    .slider-prev {
+        left: 0;
+        border-radius: 0 10px 10px 0;
+    }
+    .slider-next {
+        right: 0;
+        border-radius: 10px 0 0 10px;
+    }
 
-.slider-prev:hover, .slider-next:hover {
-    background: rgba(255,255,255,0.5);
-}
+    .slider-prev:hover,
+    .slider-next:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
 
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    background-size: cover;
-    background-position: center;
-}
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        background-size: cover;
+        background-position: center;
+    }
 
-.slide.active {
-    opacity: 1;
-}
+    .slide.active {
+        opacity: 1;
+    }
 
-@media (max-width: 768px) {
-    .hero-title { font-size: 2.5rem; }
-    .hero-trust { flex-direction: column; gap: 5px; }
-}
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2.5rem;
+        }
+        .hero-trust {
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
 </style>
 
 <script>
     let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
+    const slides = document.querySelectorAll(".slide");
     const totalSlides = slides.length;
     let slideInterval: number;
 
-    const prevBtn = document.getElementById('prevSlide');
-    const nextBtn = document.getElementById('nextSlide');
+    const prevBtn = document.getElementById("prevSlide");
+    const nextBtn = document.getElementById("nextSlide");
 
     function initSlider() {
-        if(slides.length > 0) slides[0].classList.add('active');
+        if (slides.length > 0) slides[0].classList.add("active");
         startSlideTimer();
     }
 
     function moveSlide(direction: number) {
-        slides[currentSlide].classList.remove('active');
+        slides[currentSlide].classList.remove("active");
         currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-        slides[currentSlide].classList.add('active');
+        slides[currentSlide].classList.add("active");
         resetSlideTimer();
     }
 
@@ -234,8 +283,8 @@
         startSlideTimer();
     }
 
-    if (prevBtn) prevBtn.addEventListener('click', () => moveSlide(-1));
-    if (nextBtn) nextBtn.addEventListener('click', () => moveSlide(1));
+    if (prevBtn) prevBtn.addEventListener("click", () => moveSlide(-1));
+    if (nextBtn) nextBtn.addEventListener("click", () => moveSlide(1));
 
-    document.addEventListener('DOMContentLoaded', initSlider);
+    document.addEventListener("DOMContentLoaded", initSlider);
 </script>

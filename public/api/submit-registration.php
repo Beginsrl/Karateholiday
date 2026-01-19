@@ -25,9 +25,21 @@ $query = "CREATE TABLE IF NOT EXISTS registrations (
     compagni_stanza TEXT,
     animale TEXT,
     ricevuta_path TEXT,
+    atleta_accompagnato TEXT,
     data_registrazione DATETIME DEFAULT CURRENT_TIMESTAMP
-)";
+)
+";
 $db->exec($query);
+
+// Migration: Add atleta_accompagnato column if it doesn't exist
+$result = $db->query("PRAGMA table_info(registrations)");
+$columns = [];
+while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+    $columns[] = $row['name'];
+}
+if (!in_array('atleta_accompagnato', $columns)) {
+    $db->exec("ALTER TABLE registrations ADD COLUMN atleta_accompagnato TEXT");
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = $_POST;
@@ -53,11 +65,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $db->prepare("INSERT INTO registrations (
         soggiorno, tipologia, email, cognome, nome, codice_fiscale, 
         data_nascita, luogo_nascita, indirizzo, specialita, allergie, 
-        peso_altezza, associazione, compagni_stanza, animale, ricevuta_path
+        peso_altezza, associazione, compagni_stanza, animale, ricevuta_path,
+        atleta_accompagnato
     ) VALUES (
         :soggiorno, :tipologia, :email, :cognome, :nome, :codice_fiscale, 
         :data_nascita, :luogo_nascita, :indirizzo, :specialita, :allergie, 
-        :peso_altezza, :associazione, :compagni_stanza, :animale, :ricevuta_path
+        :peso_altezza, :associazione, :compagni_stanza, :animale, :ricevuta_path,
+        :atleta_accompagnato
     )");
 
     $stmt->bindValue(':soggiorno', $data['soggiorno'] ?? '');
@@ -65,17 +79,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bindValue(':email', $data['email'] ?? '');
     $stmt->bindValue(':cognome', $data['cognome'] ?? '');
     $stmt->bindValue(':nome', $data['nome'] ?? '');
-    $stmt->bindValue(':codice_fiscale', $data['codice'] ?? ''); // Form field might be 'codice' or 'codice_fiscale' - checking needed
-    $stmt->bindValue(':data_nascita', $data['nascita'] ?? '');
-    $stmt->bindValue(':luogo_nascita', $data['luogo'] ?? '');
+    $stmt->bindValue(':codice_fiscale', $data['cf'] ?? '');
+    $stmt->bindValue(':data_nascita', $data['data_nascita'] ?? '');
+    $stmt->bindValue(':luogo_nascita', $data['luogo_nascita'] ?? '');
     $stmt->bindValue(':indirizzo', $data['indirizzo'] ?? '');
     $stmt->bindValue(':specialita', $data['specialita'] ?? '');
     $stmt->bindValue(':allergie', $data['allergie'] ?? '');
-    $stmt->bindValue(':peso_altezza', $data['peso'] ?? '');
+    $stmt->bindValue(':peso_altezza', $data['peso_altezza'] ?? '');
     $stmt->bindValue(':associazione', $data['associazione'] ?? '');
-    $stmt->bindValue(':compagni_stanza', $data['compagni'] ?? '');
+    $stmt->bindValue(':compagni_stanza', $data['compagni_stanza'] ?? '');
     $stmt->bindValue(':animale', $data['animale'] ?? '');
     $stmt->bindValue(':ricevuta_path', $ricevutaPath);
+    $stmt->bindValue(':atleta_accompagnato', $data['atleta_accompagnato'] ?? '');
 
     if ($stmt->execute()) {
         // Send Email using PHP mail() - Simple version
